@@ -31,6 +31,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: "*.uf2"
-          tag_name: "${{ env.tag_name }}"
-          name: "Firmware release ${{ env.tag_name }}"
+          # tag_name: "${{ env.tag_name }}"
+          name: "${{ env.tag_name }}"
           body: "🚀 New firmware release for ZMK!"
