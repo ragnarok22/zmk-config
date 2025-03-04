@@ -26,6 +26,7 @@ jobs:
 
       - name: Print Compressed Firmware
         run: echo ${{ env.firmware_file }}
+        run: ls
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
