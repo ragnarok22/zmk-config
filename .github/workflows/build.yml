@@ -24,6 +24,9 @@ jobs:
       - name: Find Compressed Firmware
         run: echo "firmware_file=$(ls | grep -E '\.zip$|\.tar\.gz$')" >> $GITHUB_ENV
 
+      - name: Print Compressed Firmware
+        run: echo ${{ env.firmware_file }}
+
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
