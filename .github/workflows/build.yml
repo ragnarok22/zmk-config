@@ -25,8 +25,9 @@ jobs:
         run: echo "firmware_file=$(ls | grep -E 'firmware')" >> $GITHUB_ENV
 
       - name: Print Compressed Firmware
-        run: echo ${{ env.firmware_file }}
-        run: ls
+        run: |
+          echo ${{ env.firmware_file }}
+          ls
 
       - name: Create Release
         uses: softprops/action-gh-release@v2
