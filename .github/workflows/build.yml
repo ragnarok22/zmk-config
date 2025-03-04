@@ -22,7 +22,7 @@ jobs:
           path: .
 
       - name: Find Compressed Firmware
-        run: echo "firmware_file=$(ls | grep -E '\.zip$|\.tar\.gz$')" >> $GITHUB_ENV
+        run: echo "firmware_file=$(ls | grep -E 'firmware')" >> $GITHUB_ENV
 
       - name: Print Compressed Firmware
         run: echo ${{ env.firmware_file }}
@@ -34,6 +34,3 @@ jobs:
           tag_name: "${{ env.tag_name }}"
           release name: "Firmware release ${{ env.tag_name }}"
           body: "🚀 New firmware release for ZMK!"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
